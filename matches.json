@@ -1,0 +1,22 @@
+[
+  {
+    "fecha":"2025-10-12",
+    "hora":"19:30",
+    "jornada":1,
+    "competicion":"Liga 1ª División",
+    "pabellon":"Pabellón Luis Vives",
+    "local":"CFS Luis Vives",
+    "visitante":"Rival FS",
+    "resultado": ""
+  },
+  {
+    "fecha":"2025-10-19",
+    "hora":"18:00",
+    "jornada":2,
+    "competicion":"Liga 1ª División",
+    "pabellon":"Pabellón Luis Vives",
+    "local":"Otro Club",
+    "visitante":"CFS Luis Vives",
+    "resultado": "2-3"
+  }
+]

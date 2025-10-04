@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partidos · CFS Luis Vives</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <a href="./"><img src="assets/crest.png" alt="Escudo"></a>
+        <span>CFS Luis Vives</span>
+      </div>
+      <nav>
+        <a href="./">Inicio</a>
+        <a class="btn btn-ghost" href="partidos.html">PARTIDOS</a>
+        <a class="btn btn-primary" href="donaciones.html">DONACIONES</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container" style="padding:24px 0 60px">
+    <h1>Partidos</h1>
+    <p class="badge"><span class="dot"></span> Vista de ejemplo: en la versión final conectaremos esta página a tu base de datos (Flask/API) o a un JSON estático para la demo.</p>
+    <div id="matches"></div>
+    <script>
+    fetch('data/matches.json')
+      .then(r => r.json())
+      .then(list => {
+        const box = document.getElementById('matches');
+        box.innerHTML = list.map(m => `
+          <div class="match" style="background:#fff;border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 8px 24px rgba(0,0,0,.08)">
+            <strong>${m.fecha}</strong> · Jornada ${m.jornada} · ${m.competicion}<br>
+            ${m.local} <strong>${m.resultado||'-'}</strong> ${m.visitante} · ${m.hora} · ${m.pabellon}
+          </div>
+        `).join('');
+      });
+    </script>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-actions">
+        <a class="btn btn-primary" href="https://instagram.com/" target="_blank" rel="noopener">Redes sociales</a>
+        <a class="btn btn-primary" href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
